@@ -1,0 +1,17 @@
+<% include header.ejs%>
+<nav class="navbar navbar-default">
+    <a class="navbar-brand" href="#"><%= title%></a>
+</nav>
+<form class="container form" method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">请输入用户名</label><br>
+        <input type="text" required class="input" name="username" id="exampleInputEmail1" placeholder="请输入用户名">
+    </div><br>
+    <div class="form-group">
+        <label for="exampleInputPassword1">请输入密码</label><br>
+        <input type="password" required name="password" class="input" id="exampleInputPassword1" placeholder="请输入密码">
+    </div><br>
+    <button type="submit" class="btn btn-success">登录</button>
+    <a href="/register">没账号，去注册</a>
+</form>
+<% include footer.ejs%>

@@ -1,0 +1,42 @@
+<% include header.ejs%>
+<nav class="navbar navbar-default">
+    <a class="navbar-brand" href="#"><%= title%></a>
+</nav>
+<form class="form-inline" method="post">
+    <div class="form-group">
+        <label for="exampleInputName2">姓名</label>
+        <input disabled type="text" name="name" value="<%= student.name%>">
+    </div>
+    <div class="form-group">
+        <label>性别:</label>
+        <select name="gender">
+            <option value="不限">不限</option>
+            <option value="男">男</option>
+            <option value="女">女</option>
+        </select>
+    </div><br>
+    <hr>
+    <div class="form-group">
+        <label>班级</label>
+        <select name="major">
+            <option value="JAVA" <% if(student.major == 'JAVA') {%>
+                    <% 'selected' }%>
+                     >JAVA</option>
+            <option value="HTML" <% if(student.major == 'HTML') {%>
+                    <% 'selected' }%>
+            >HTML</option>
+            <option value="VR" <% if(student.major == 'VR') {%>
+                    <% 'selected' }%>
+            >VR</option>
+
+
+
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail2">Email</label>
+        <input type="email" required name="email" class="form-control" id="exampleInputEmail2" value="<%= student.email%>">
+    </div>
+    <button type="submit" class="btn btn-success">修改</button>
+</form>
+<% include footer.ejs%>

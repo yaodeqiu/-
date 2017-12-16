@@ -1,0 +1,30 @@
+<% include header.ejs%>
+<nav class="navbar navbar-default">
+    <a class="navbar-brand" href="#"><%= title%></a>
+</nav>
+<table class="container table table-bordered">
+    <tr>
+        <th>创建时间</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>邮箱</th>
+        <th>专业</th>
+        <th>更新</th>
+        <th>
+            <a href="/removeAll">清空</a>
+        </th>
+    </tr>
+    <% students.forEach(function (student) {  %>
+    <tr>
+        <td><%= student.time%></td>
+        <td><%= student.name%></td>
+        <td><%= student.gender%></td>
+        <td><%= student.email%></td>
+        <td><%= student.major%></td>
+        <td><a href="/update/<%= student.name%>/<%= student.time%>">更新</a></td>
+        <td><a href="/remove/<%= student.name%>/<%= student.time%>">删除</a></td>
+    </tr>
+    <% })%>
+</table>
+<button class="btn btn-success"><a class="user" href="/">返回主页</a></button>
+<% include footer.ejs%>

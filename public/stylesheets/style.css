@@ -1,0 +1,31 @@
+body {
+  /*padding:100px;*/
+    padding-top: 100px;
+    padding-left: 350px;
+    padding-right: 350px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.user{
+  text-decoration: none;
+  color: white;
+}
+.user:hover{
+  color: white;
+  text-decoration: none;
+}
+a {
+  color: #00B7FF;
+}
+.form .input{
+    width: 600px;
+    height: 40px;
+    margin: 0 auto;
+}
+h3{
+    color: red;
+    text-align: center;
+}
+#actives{
+    color: #2b542c;
+}
+

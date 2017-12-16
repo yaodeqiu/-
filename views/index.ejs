@@ -1,0 +1,66 @@
+<% include header.ejs%>
+
+<nav class="navbar navbar-default">
+    <a class="navbar-brand" href="#">增删改查</a>
+    <form class="navbar-form navbar-left">
+        <% if(!user){%>
+        <button type="submit" class="btn btn-success">
+            <a href="/login" class="user">登录</a>
+        </button>
+        <button type="submit" class="btn btn-primary">
+            <a href="/register" class="user">注册</a>
+        </button>
+        <% }else{ %>
+        <button type="submit" class="btn btn-primary">
+            <a href="/logout" class="user">退出登录</a>
+        </button>
+        <button type="submit" class="btn btn-success">
+            <a  href="/add" class="user">增加信息</a>
+        </button>
+        <% } %>
+    </form>
+</nav>
+<table class="container table table-bordered">
+    <tr>
+        <th>创建时间</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>邮箱</th>
+        <th>专业</th>
+        <th>更新</th>
+        <th>
+            <a href="/removeAll">清空</a>
+        </th>
+    </tr>
+    <% students.forEach(function (student) {  %>
+    <tr>
+        <td><%= student.time%></td>
+        <td><%= student.name%></td>
+        <td><%= student.gender%></td>
+        <td><%= student.email%></td>
+        <td><%= student.major%></td>
+        <td><a href="/update/<%= student.name%>/<%= student.time%>">更新</a></td>
+        <td><a href="/remove/<%= student.name%>/<%= student.time%>">删除</a></td>
+    </tr>
+     <% })%>
+</table>
+
+<nav>
+    <nav class="navbar-right">
+        <ul class="pagination">
+            <li><a href="?page=<%= isFristpage%>"><span>上一页</span></a></li>
+            <% for(var i = 1;i<counts+1;i++){%>
+            <li><a href="?page=<%= i%>"><span><%= i%></span></a></li>
+            <% } %>
+            <li><a href="?page=<%= isLastpage%>"><span>下一页</span></a></li>
+        </ul>
+    </nav>
+    <nav class="navbar-left">
+        <form method="get" action="search">
+            <input placeholder="按姓名查询" name="searchname">
+        </form>
+    </nav>
+</nav>
+
+
+<% include footer.ejs%>

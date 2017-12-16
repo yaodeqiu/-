@@ -1,0 +1,23 @@
+<% include header.ejs%>
+<nav class="navbar navbar-default">
+    <a class="navbar-brand" href="#"><%= title%></a>
+</nav>
+<form class="container form" method="post">
+    <div>
+        <label for="exampleInputEmail1">请输入用户名</label><br>
+        <input type="text" class="input" name="username" id="exampleInputEmail1" placeholder="请输入用户名">
+    </div><br>
+    <div>
+        <label for="exampleInputPassword1">请输入密码</label><br>
+        <input type="password" name="password" class="input" id="exampleInputPassword1" placeholder="请输入密码">
+    </div><br>
+    <div>
+        <label for="exampleInputPassword1">请重复输入密码</label><br>
+        <input type="password" class="input" name="repassword" id="exampleInputPassword1" placeholder="请重复输入密码">
+    </div><br>
+    <button type="submit" class="btn btn-success">
+        注册
+    </button>
+</form>
+
+<% include footer.ejs%>
